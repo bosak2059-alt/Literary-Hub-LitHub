@@ -15,23 +15,26 @@
         <li><a href="/ClubDirectory.html">Каталог клубов</a></li>
         <li><a href="/ClubPage.html">Страница клуба</a></li>
         <li><a href="/MeetingCalendar.html">Календарь встреч</a></li>
-        <li><a href="/profile.html">Саргис Петросян</a></li>
+        <li><a href="/profile.html">Профиль</a></li>
       </ul>
+      <button class="nav-toggle">☰</button>
     </nav>
   </header>
 
   <main>
+    <!-- Hero Section -->
     <section class="hero">
       <h1>Найди свой книжный клуб</h1>
       <p>Обсуждай прочитанное, выбирай книги вместе и читай регулярно в кругу единомышленников.</p>
       <div class="actions">
         <a href="/ClubDirectory.html" class="btn">Найти клуб</a>
-        <a href="/ClubPage.html" class="btn btn-outline">Создать клуб</a>
+        <a href="/profile.html" class="btn btn-outline">Создать клуб</a>
       </div>
     </section>
 
+    <!-- How it works -->
     <section style="margin-top: 3rem;">
-      <h2>Как это работает</h2>
+      <h2 style="text-align: center; margin-bottom: 2rem;">Как это работает</h2>
       <div class="grid grid-3">
         <div class="card">
           <h3>📚 Присоединяйся</h3>
@@ -48,26 +51,68 @@
       </div>
     </section>
 
-    <section style="margin-top: 3rem;">
-      <h2>Популярные клубы</h2>
-      <div class="grid grid-3">
+    <!-- NEW: About, Goals & Rules Section -->
+    <section style="margin-top: 4rem;">
+      <h2 style="text-align: center; margin-bottom: 2rem;">О платформе LitHub</h2>
+      <div class="grid grid-2">
+        <!-- About Us -->
+        <div class="card" style="padding: 2rem;">
+          <h3>👋 Кто мы?</h3>
+          <p>LitHub — это не просто каталог книг, а пространство для живого общения. Мы создали платформу, где можно найти единомышленников для глубоких обсуждений, а не просто ставить оценки прочитанному.</p>
+        </div>
+        <!-- Goals -->
+        <div class="card" style="padding: 2rem;">
+          <h3>🎯 Наши цели</h3>
+          <ul style="padding-left: 1.2rem; margin-top: 0.5rem;">
+            <li>Упростить создание и ведение книжных клубов.</li>
+            <li>Сделать чтение регулярной привычкой через поддержку комьюнити.</li>
+            <li>Обеспечить безопасную среду для дискуссий без токсичности.</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Rules -->
+      <div class="card" style="margin-top: 1.5rem; padding: 2rem; border-left: 4px solid var(--accent);">
+        <h3 style="margin-bottom: 1rem;">📜 Правила сообщества</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+          <div>
+            <strong style="color: var(--accent);">1. Уважение</strong>
+            <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 0.5rem;">Уважайте мнение других, даже если оно отличается от вашего. Оскорбления и переход на личности запрещены.</p>
+          </div>
+          <div>
+            <strong style="color: var(--accent);">2. Без спама</strong>
+            <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 0.5rem;">Запрещена реклама сторонних ресурсов, услуг и книг, не относящихся к тематике обсуждаемого клуба.</p>
+          </div>
+          <div>
+            <strong style="color: var(--accent);">3. Конфиденциальность</strong>
+            <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 0.5rem;">Личные данные участников и содержание закрытых клубов не разглашаются третьим лицам.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Clubs -->
+    <section style="margin-top: 4rem;">
+      <h2 style="margin-bottom: 1.5rem;">Популярные клубы</h2>
+      <div class="grid grid-3" id="clubs-list">
+        <!-- Статический контент для демо, который может быть перезаписан JS -->
         <div class="card club-card">
           <h3>Филологи & Ко</h3>
           <div class="club-meta"><span>Классика</span><span>142 участника</span><span>Встреча: 22 апр</span></div>
           <p>Глубокий анализ русской и зарубежной литературы.</p>
-          <a href="/ClubPage.html" class="btn" style="margin-top: 1rem;">Перейти в клуб</a>
+          <a href="/ClubPage.html?id=c1" class="btn btn-sm" style="margin-top: 1rem;">Перейти в клуб</a>
         </div>
         <div class="card club-card">
           <h3>Sci-Fi Lounge</h3>
           <div class="club-meta"><span>Научная фантастика</span><span>89 участников</span><span>Встреча: 25 апр</span></div>
           <p>Обсуждаем технологии будущего через призму книг.</p>
-          <a href="/ClubPage.html" class="btn" style="margin-top: 1rem;">Перейти в клуб</a>
+          <a href="/ClubPage.html?id=c3" class="btn btn-sm" style="margin-top: 1rem;">Перейти в клуб</a>
         </div>
         <div class="card club-card">
           <h3>Тихий Читатель</h3>
           <div class="club-meta"><span>Без давления</span><span>215 участников</span><span>Встреча: 20 апр</span></div>
           <p>Для тех, кто хочет читать в своём темпе и просто слушать.</p>
-          <a href="/ClubPage.html" class="btn" style="margin-top: 1rem;">Перейти в клуб</a>
+          <a href="/ClubPage.html?id=c2" class="btn btn-sm" style="margin-top: 1rem;">Перейти в клуб</a>
         </div>
       </div>
     </section>
@@ -76,5 +121,7 @@
   <footer>
     <p>&copy; 2026 LitHub. Платформа для книжных клубов. Только фронтенд-демо.</p>
   </footer>
+  
+  <script src="/js/script.js" defer></script>
 </body>
 </html>
