@@ -1,19 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Каталог клубов</title>
-    <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог клубов | LitHub</title>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <header>
-        <nav></nav>
-    </header>
-    <main>
-        <section></section>
-    </main>
-    <footer></footer>
-    <script src="/js/script.js"></script>
+  <header>
+    <nav>
+      <a href="/index.html" class="logo">LitHub</a>
+      <ul class="nav-links">
+        <li><a href="/index.html">Главная</a></li>
+        <li><a href="/ClubDirectory.html" class="active">Каталог клубов</a></li>
+        <li><a href="/ClubPage.html">Страница клуба</a></li>
+        <li><a href="/MeetingCalendar.html">Календарь встреч</a></li>
+        <li><a href="/profile.html">Саргис Петросян</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Каталог книжных клубов</h1>
+    
+    <div class="filters">
+      <input type="text" placeholder="Поиск по названию или жанру...">
+      <select>
+        <option>Все жанры</option>
+        <option>Классика</option>
+        <option>Современная проза</option>
+        <option>Научная фантастика</option>
+        <option>Нон-фикшн</option>
+      </select>
+      <select>
+        <option>Любой формат</option>
+        <option>Онлайн</option>
+        <option>Офлайн</option>
+        <option>Гибрид</option>
+      </select>
+    </div>
+
+    <div id="clubs-list" class="grid grid-3">
+      <div class="card club-card">
+        <h3>Филологи & Ко</h3>
+        <div class="club-meta"><span>Классика</span><span>142 участника</span><span>⭐ 4.8</span></div>
+        <p>Глубокий анализ русской и зарубежной литературы. Строгие сроки, живые дискуссии.</p>
+        <button class="btn" style="margin-top: 1rem;">Вступить</button>
+      </div>
+      <div class="card club-card">
+        <h3>Тихий Читатель</h3>
+        <div class="club-meta"><span>Без давления</span><span>215 участников</span><span>⭐ 4.9</span></div>
+        <p>Режим "тихого участника". Можно только слушать или писать раз в неделю.</p>
+        <button class="btn" style="margin-top: 1rem;">Вступить</button>
+      </div>
+      <div class="card club-card">
+        <h3>Бизнес-книги: Практика</h3>
+        <div class="club-meta"><span>Нон-фикшн</span><span>78 участников</span><span>⭐ 4.6</span></div>
+        <p>Читаем и применяем. Еженедельные разборы кейсов.</p>
+        <button class="btn" style="margin-top: 1rem;">Вступить</button>
+      </div>
+      <div class="card club-card">
+        <h3>Поэзия и Смыслы</h3>
+        <div class="club-meta"><span>Поэзия</span><span>54 участника</span><span>⭐ 4.7</span></div>
+        <p>Раз в месяц выбираем сборник и делимся любимыми строками.</p>
+        <button class="btn" style="margin-top: 1rem;">Вступить</button>
+      </div>
+      <div class="card club-card">
+        <h3>Детективный Клуб</h3>
+        <div class="club-meta"><span>Триллеры</span><span>112 участников</span><span>⭐ 4.5</span></div>
+        <p>Угадываем финал, разбираем логику сюжетов и авторские приёмы.</p>
+        <button class="btn" style="margin-top: 1rem;">Вступить</button>
+      </div>
+      <div class="card club-card">
+        <h3>Арт-Литература</h3>
+        <div class="club-meta"><span>Современная проза</span><span>67 участников</span><span>⭐ 4.8</span></div>
+        <p>Книги с визуальным оформлением, артхаус и экспериментальная проза.</p>
+        <button class="btn" style="margin-top: 1rem;">Вступить</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 LitHub. Платформа для книжных клубов. Только фронтенд-демо.</p>
+  </footer>
 </body>
 </html>

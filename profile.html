@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Профиль | LitHub</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .profile-hero { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; margin-bottom: 2rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border); }
+    .avatar { width: 100px; height: 100px; border-radius: 50%; background: var(--primary); color: white; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 700; font-family: var(--font-serif); flex-shrink: 0; }
+    .profile-stats { display: flex; gap: 2rem; margin-top: 0.8rem; flex-wrap: wrap; }
+    .stat-item { text-align: center; }
+    .stat-num { font-size: 1.4rem; font-weight: bold; color: var(--accent); }
+    .stat-label { font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; }
+    .tag { display: inline-block; background: var(--bg); border: 1px solid var(--border); padding: 0.3rem 0.8rem; border-radius: 20px; margin: 0.2rem; font-size: 0.85rem; color: var(--text); }
+    .tag.mod { border-color: var(--accent); background: #fff8f0; color: var(--accent); }
+    .review-card { padding: 1rem 0; border-bottom: 1px solid var(--border); }
+    .review-card:last-child { border-bottom: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/index.html" class="logo">LitHub</a>
+      <ul class="nav-links">
+        <li><a href="/index.html">Главная</a></li>
+        <li><a href="/ClubDirectory.html">Каталог клубов</a></li>
+        <li><a href="/ClubPage.html">Страница клуба</a></li>
+        <li><a href="/MeetingCalendar.html">Календарь встреч</a></li>
+        <li><a href="/profile.html" class="active">Саргис Петросян</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="profile-hero">
+      <div class="avatar">СП</div>
+      <div>
+        <h1 style="margin-bottom: 0.3rem;">Саргис Петросян</h1>
+        <p style="color: var(--text-light);">📍 Москва • На платформе с 2024</p>
+        <div class="profile-stats">
+          <div class="stat-item"><div class="stat-num">47</div><div class="stat-label">Книг</div></div>
+          <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Клуба</div></div>
+          <div class="stat-item"><div class="stat-num">12</div><div class="stat-label">Рецензий</div></div>
+          <div class="stat-item"><div class="stat-num">🔥 14 дн.</div><div class="stat-label">Серия чтения</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-2">
+      <!-- Мои клубы -->
+      <div class="card">
+        <h2>📚 Мои клубы</h2>
+        <div style="margin-top: 0.8rem;">
+          <span class="tag">Филологи & Ко</span>
+          <span class="tag">Тихий Читатель</span>
+          <span class="tag mod">Sci-Fi Lounge (Модератор)</span>
+        </div>
+        <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border);">
+          <a href="/create-club.html" class="btn" style="width: 100%; text-align: center;">+ Создать свой клуб</a>
+          <p style="font-size: 0.8rem; color: var(--text-light); margin-top: 0.5rem; text-align: center;">Доступно только из профиля</p>
+        </div>
+      </div>
+
+      <!-- Читаю сейчас -->
+      <div class="card">
+        <h2>📖 Текущее чтение</h2>
+        <div style="margin-top: 0.8rem;">
+          <p style="font-weight: 600; font-size: 1.1rem;">Мастер и Маргарита</p>
+          <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 0.5rem;">Клуб: Филологи & Ко • Прогресс: 68%</p>
+          <div class="vote-bar"><div class="vote-fill" style="width: 68%;"></div></div>
+          <div style="margin-top: 1rem; padding: 0.8rem; background: var(--bg); border-radius: 8px; font-size: 0.9rem;">
+            <strong>Следующая книга:</strong> <em>Преступление и наказание</em><br>
+            <span style="color: var(--text-light);">Голосование закрывается 28 апреля</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Настройки -->
+      <div class="card">
+        <h2>⚙️ Настройки</h2>
+        <ul style="list-style: none; margin-top: 0.8rem;">
+          <li style="padding: 0.6rem 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between;">
+            <span>📧 Email</span><span style="color: var(--text-light);">sargis@example.com</span>
+          </li>
+          <li style="padding: 0.6rem 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between;">
+            <span>🔔 Уведомления</span><span style="color: var(--success); font-weight: 500;">Включены</span>
+          </li>
+          <li style="padding: 0.6rem 0; display: flex; justify-content: space-between;">
+            <span>👁️ Видимость профиля</span><span style="color: var(--text-light);">Публичный</span>
+          </li>
+        </ul>
+        <button class="btn btn-outline" style="margin-top: 1rem; width: 100%;">Редактировать</button>
+      </div>
+
+      <!-- Последние активности -->
+      <div class="card">
+        <h2>📝 Последние рецензии</h2>
+        <div style="margin-top: 0.8rem;">
+          <div class="review-card">
+            <p style="font-style: italic; color: var(--text-light);">"Атмосферная проза, но затянуто в середине. Финал всё компенсирует."</p>
+            <p style="font-weight: 600; margin-top: 0.3rem;">Дюна • ★★★★★</p>
+          </div>
+          <div class="review-card">
+            <p style="font-style: italic; color: var(--text-light);">"Отличный разбор человеческой природы. Актуально как никогда."</p>
+            <p style="font-weight: 600; margin-top: 0.3rem;">1984 • ★★★★☆</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 LitHub. Платформа для книжных клубов. Только фронтенд-демо.</p>
+  </footer>
+</body>
+</html>

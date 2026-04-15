@@ -1,19 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Календарь встреч</title>
-    <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Календарь встреч | LitHub</title>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <header>
-        <nav></nav>
-    </header>
-    <main>
-        <section></section>
-    </main>
-    <footer></footer>
-    <script src="/js/script.js"></script>
+  <header>
+    <nav>
+      <a href="/index.html" class="logo">LitHub</a>
+      <ul class="nav-links">
+        <li><a href="/index.html">Главная</a></li>
+        <li><a href="/ClubDirectory.html">Каталог клубов</a></li>
+        <li><a href="/ClubPage.html">Страница клуба</a></li>
+        <li><a href="/MeetingCalendar.html" class="active">Календарь встреч</a></li>
+        <li><a href="/profile.html">Саргис Петросян</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="calendar-header">
+      <h1>Апрель 2026</h1>
+      <div>
+        <button class="btn btn-outline">← Пред.</button>
+        <button class="btn btn-outline">След. →</button>
+      </div>
+    </div>
+
+    <div class="grid grid-2" style="align-items: start;">
+      <div>
+        <div class="calendar-grid">
+          <div class="day-header">Пн</div><div class="day-header">Вт</div><div class="day-header">Ср</div>
+          <div class="day-header">Чт</div><div class="day-header">Пт</div><div class="day-header">Сб</div><div class="day-header">Вс</div>
+          
+          <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell">1</div><div class="day-cell">2</div><div class="day-cell">3</div><div class="day-cell">4</div><div class="day-cell">5</div>
+          <div class="day-cell">6</div><div class="day-cell">7</div><div class="day-cell">8</div><div class="day-cell">9</div><div class="day-cell">10</div><div class="day-cell">11</div><div class="day-cell">12</div>
+          <div class="day-cell">13</div><div class="day-cell">14</div><div class="day-cell" style="border-color: var(--accent); background: #fff8f0;">15
+            <span class="event">Филологи & Ко</span>
+          </div><div class="day-cell">16</div><div class="day-cell">17</div><div class="day-cell">18</div><div class="day-cell">19</div>
+          <div class="day-cell">20
+            <span class="event">Тихий Читатель</span>
+          </div><div class="day-cell">21</div><div class="day-cell" style="border-color: var(--accent); background: #fff8f0;">22
+            <span class="event">Мастер и Маргарита</span>
+          </div><div class="day-cell">23</div><div class="day-cell">24</div><div class="day-cell">25
+            <span class="event">Sci-Fi Lounge</span>
+          </div><div class="day-cell">26</div>
+          <div class="day-cell">27</div><div class="day-cell">28</div><div class="day-cell">29</div><div class="day-cell">30</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="card">
+          <h2>Предстоящие встречи</h2>
+          <ul style="list-style: none; margin-top: 1rem;">
+            <li style="padding: 1rem 0; border-bottom: 1px solid var(--border);">
+              <strong>15 апр, 19:00</strong> — Филологи & Ко<br>
+              <span style="color: var(--text-light); font-size: 0.9rem;">Онлайн (Zoom) • Тема: Анализ символики</span><br>
+              <button class="btn btn-outline" style="margin-top: 0.5rem; padding: 0.3rem 0.6rem; font-size: 0.8rem;">Подтвердить участие</button>
+            </li>
+            <li style="padding: 1rem 0; border-bottom: 1px solid var(--border);">
+              <strong>20 апр, 20:00</strong> — Тихий Читатель<br>
+              <span style="color: var(--text-light); font-size: 0.9rem;">Асинхронно в чате • Тема: Глава 5</span>
+            </li>
+            <li style="padding: 1rem 0;">
+              <strong>22 апр, 19:00</strong> — Филологи & Ко<br>
+              <span style="color: var(--text-light); font-size: 0.9rem;">Офлайн (Библиотека им. Пушкина) • Подведение итогов</span><br>
+              <button class="btn btn-outline" style="margin-top: 0.5rem; padding: 0.3rem 0.6rem; font-size: 0.8rem;">Подтвердить участие</button>
+            </li>
+          </ul>
+          <div style="margin-top: 1.5rem;">
+            <button class="btn">📅 Экспорт в Google Calendar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 LitHub. Платформа для книжных клубов. Только фронтенд-демо.</p>
+  </footer>
 </body>
 </html>

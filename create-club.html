@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Создать клуб | LitHub</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/index.html" class="logo">LitHub</a>
+      <ul class="nav-links">
+        <li><a href="/index.html">Главная</a></li>
+        <li><a href="/ClubDirectory.html">Каталог клубов</a></li>
+        <li><a href="/ClubPage.html">Страница клуба</a></li>
+        <li><a href="/MeetingCalendar.html">Календарь встреч</a></li>
+        <li><a href="/profile.html" class="active">Саргис Петросян</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main style="max-width: 750px;">
+    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+      <a href="/profile.html" class="btn btn-outline" style="padding: 0.5rem 1rem;">← Вернуться в профиль</a>
+      <h1 style="margin-bottom: 0;">Создать новый клуб</h1>
+    </div>
+
+    <div class="card">
+      <form id="createClubForm">
+        <div style="margin-bottom: 1.2rem;">
+          <label style="display: block; margin-bottom: 0.4rem; font-weight: 600;">Название клуба *</label>
+          <input type="text" required placeholder="Например: Поэзия без границ" style="width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem;">
+        </div>
+
+        <div style="margin-bottom: 1.2rem;">
+          <label style="display: block; margin-bottom: 0.4rem; font-weight: 600;">Описание и цели клуба *</label>
+          <textarea rows="3" required placeholder="О чем будет клуб? Как часто планируете встречаться? Какие книги обсуждаете?" style="width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: 8px; font-family: inherit; resize: vertical; font-size: 0.95rem;"></textarea>
+        </div>
+
+        <div class="grid grid-2">
+          <div style="margin-bottom: 1.2rem;">
+            <label style="display: block; margin-bottom: 0.4rem; font-weight: 600;">Основной жанр</label>
+            <select style="width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: 8px; font-size: 0.95rem;">
+              <option>Классика</option>
+              <option>Современная проза</option>
+              <option>Научная фантастика / Фэнтези</option>
+              <option>Нон-фикшн / Биографии</option>
+              <option>Поэзия</option>
+              <option>Детективы / Триллеры</option>
+              <option>Смешанный формат</option>
+            </select>
+          </div>
+          <div style="margin-bottom: 1.2rem;">
+            <label style="display: block; margin-bottom: 0.4rem; font-weight: 600;">Формат встреч</label>
+            <select style="width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: 8px; font-size: 0.95rem;">
+              <option>Онлайн (Zoom / Discord / Telegram)</option>
+              <option>Офлайн (кафе, библиотека, парк)</option>
+              <option>Гибридный</option>
+              <option>Асинхронный (только чат)</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.2rem;">
+          <label style="display: block; margin-bottom: 0.4rem; font-weight: 600;">Частота обсуждений</label>
+          <select style="width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: 8px; font-size: 0.95rem;">
+            <option>Раз в неделю</option>
+            <option>Раз в 2 недели</option>
+            <option>Раз в месяц</option>
+            <option>По решению участников</option>
+          </select>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; margin-bottom: 0.4rem; font-weight: 600;">Правила и ожидания</label>
+          <textarea rows="2" placeholder="Например: обязательное прочтение перед встречей, уважение к мнениям, без спойлеров в общих чатах..." style="width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: 8px; font-family: inherit; resize: vertical; font-size: 0.95rem;"></textarea>
+        </div>
+
+        <div style="margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;">
+          <label style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer; font-weight: 500;">
+            <input type="checkbox"> 🚪 Закрытый клуб (вступление только по приглашению)
+          </label>
+          <label style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer; font-weight: 500;">
+            <input type="checkbox" checked> 👤 Включить режим "тихого участника"
+          </label>
+        </div>
+
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="/profile.html" class="btn btn-outline" style="padding: 0.8rem 1.5rem;">Отмена</a>
+          <button type="submit" class="btn" style="flex: 1; min-width: 200px;">🚀 Создать клуб</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 LitHub. Платформа для книжных клубов. Только фронтенд-демо.</p>
+  </footer>
+
+  <script>
+    // Имитация создания клуба без бэкенда
+    document.getElementById('createClubForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Клуб успешно создан! Перенаправление на страницу клуба...');
+      window.location.href = '/ClubPage.html';
+    });
+  </script>
+</body>
+</html>
