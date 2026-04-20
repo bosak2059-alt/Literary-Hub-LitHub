@@ -10,6 +10,7 @@
   <header>
     <nav>
       <a href="/index.html" class="logo">LitHub</a>
+      <button class="nav-toggle" aria-label="Открыть меню">☰</button>
       <ul class="nav-links">
         <li><a href="/index.html">Главная</a></li>
         <li><a href="/ClubDirectory.html">Каталог клубов</a></li>
@@ -21,106 +22,109 @@
   </header>
 
   <main>
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap;">
-      <div>
-        <h1>Филологи & Ко</h1>
-        <p style="color: var(--text-light);">Основан: Анна К. • 142 участника • Активность: Высокая</p>
-      </div>
-      <button class="btn">Покинуть клуб</button>
-    </div>
+    <section class="club-header card" style="margin-bottom: 1.5rem;">
+      <h1>Филологи & Ко</h1>
+      <p class="club-meta">Основан: Анна К. • 142 участника • Активность: Высокая</p>
+      <button class="btn btn-outline btn-sm">Покинуть клуб</button>
+    </section>
 
     <div class="tabs">
       <button class="tab-btn active" data-tab="#tab-book">📖 Текущая книга</button>
       <button class="tab-btn" data-tab="#tab-chat">💬 Обсуждение</button>
       <button class="tab-btn" data-tab="#tab-vote">🗳 Голосование</button>
-      <button class="tab-btn" onclick="openTab(event, 'tab-info')">ℹ️ О клубе</button>
+      <button class="tab-btn" data-tab="#tab-info">ℹ️ О клубе</button>
     </div>
 
+    <!-- Вкладка: Текущая книга -->
     <div id="tab-book" class="tab-content active">
-      <div class="card">
-        <div class="book-preview">
-          <div class="book-cover">Обложка</div>
-          <div>
-            <h2>Мастер и Маргарита</h2>
-            <p style="color: var(--text-light); margin-bottom: 0.5rem;">Михаил Булгаков • 480 стр.</p>
-            <p>Обсуждаем части I-II. Следующая встреча: 22 апреля, 19:00 (Zoom).</p>
-            <div style="margin-top: 1rem;">
-              <span style="font-weight: 600;">Ваш прогресс:</span> 68% прочитано
-              <div class="vote-bar" style="margin-top: 0.3rem;"><div class="vote-fill" style="width: 68%;"></div></div>
-            </div>
+      <div class="card book-preview">
+        <div class="book-cover">Обложка</div>
+        <div>
+          <h2>Мастер и Маргарита</h2>
+          <p class="club-meta">Михаил Булгаков • 480 стр.</p>
+          <p>Обсуждаем части I-II. Следующая встреча: 22 апреля, 19:00 (Zoom).</p>
+          <p>Ваш прогресс: <strong>68%</strong> прочитано</p>
+          <div style="display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap;">
+            <a href="#" class="btn btn-sm">Скачать вопросы для встречи</a>
+            <button class="btn btn-outline btn-sm">Отметить встречу</button>
           </div>
         </div>
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
-          <button class="btn btn-outline">Скачать вопросы для встречи</button>
-          <button class="btn btn-outline">Отметить встречу</button>
-        </div>
       </div>
     </div>
 
+    <!-- Вкладка: Обсуждение (Чат) -->
     <div id="tab-chat" class="tab-content">
-      <div class="chat-box">
-        <div class="msg other">
-          <div class="msg-meta">Мария • Вчера, 14:30</div>
-          <p>Сцена с балом у Сатаны просто шедевр. Как думаете, почему Булгаков сделал Маргариту такой решительной именно там?</p>
+      <div class="card">
+        <div class="chat-box">
+          <!-- Сообщения рендерятся через JS -->
         </div>
-        <div class="msg self">
-          <div class="msg-meta">Вы • Вчера, 15:12</div>
-          <p>Мне кажется, это её способ вернуть контроль над хаосом, который устроил Воланд.</p>
+        <div class="chat-input">
+          <input type="text" placeholder="Напишите сообщение...">
+          <button class="btn">Отправить</button>
         </div>
-        <div class="msg other">
-          <div class="msg-meta">Дмитрий • Сегодня, 10:05</div>
-          <blockquote style="border-left: 3px solid var(--border); padding-left: 0.5rem; margin: 0.3rem 0; font-style: italic; color: var(--text-light);">
-            "Мне кажется, это её способ вернуть контроль..."
-          </blockquote>
-          <p>Согласен. Интересно, что в экранизациях эту деталь часто упускают.</p>
-        </div>
-      </div>
-      <div class="chat-input">
-        <input type="text" placeholder="Написать сообщение...">
-        <button class="btn">Отправить</button>
       </div>
     </div>
 
+    <!-- Вкладка: Голосование -->
     <div id="tab-vote" class="tab-content">
       <div class="card">
         <h2>Выбираем книгу на май</h2>
-        <p style="margin-bottom: 1.5rem;">Голосование открыто до 28 апреля. Учтены интересы 84 участников.</p>
+        <p class="club-meta">Голосование открыто до 28 апреля. Учтены интересы 84 участников.</p>
         
         <div class="vote-option">
-          <div class="vote-header"><span>Преступление и наказание (Ф. Достоевский)</span><span>52%</span></div>
-          <div class="vote-bar"><div class="vote-fill" style="width: 52%;"></div></div>
-          <button class="btn btn-outline" style="margin-top: 0.5rem; padding: 0.3rem 0.8rem; font-size: 0.8rem;">Голосовать</button>
+          <div class="vote-header">
+            <span>Преступление и наказание (Ф. Достоевский)</span>
+            <span>52%</span>
+          </div>
+          <div class="vote-bar"><div class="vote-fill"></div></div>
+          <button class="btn btn-sm">Голосовать</button>
         </div>
+
         <div class="vote-option">
-          <div class="vote-header"><span>1984 (Дж. Оруэлл)</span><span>31%</span></div>
-          <div class="vote-bar"><div class="vote-fill" style="width: 31%; background: var(--primary);"></div></div>
-          <button class="btn btn-outline" style="margin-top: 0.5rem; padding: 0.3rem 0.8rem; font-size: 0.8rem;">Голосовать</button>
+          <div class="vote-header">
+            <span>1984 (Дж. Оруэлл)</span>
+            <span>31%</span>
+          </div>
+          <div class="vote-bar"><div class="vote-fill"></div></div>
+          <button class="btn btn-sm">Голосовать</button>
         </div>
+
         <div class="vote-option">
-          <div class="vote-header"><span>Цветы для Элджернона (Д. Киз)</span><span>17%</span></div>
-          <div class="vote-bar"><div class="vote-fill" style="width: 17%; background: var(--accent);"></div></div>
-          <button class="btn btn-outline" style="margin-top: 0.5rem; padding: 0.3rem 0.8rem; font-size: 0.8rem;">Голосовать</button>
+          <div class="vote-header">
+            <span>Цветы для Элджернона (Д. Киз)</span>
+            <span>17%</span>
+          </div>
+          <div class="vote-bar"><div class="vote-fill"></div></div>
+          <button class="btn btn-sm">Голосовать</button>
         </div>
       </div>
     </div>
 
+    <!-- Вкладка: О клубе -->
     <div id="tab-info" class="tab-content">
       <div class="card">
-        <h2>Правила клуба</h2>
-        <ul style="padding-left: 1.5rem; margin-bottom: 1rem;">
+        <h2>О клубе</h2>
+        <p>Добро пожаловать в «Филологи & Ко»! 📚</p>
+        <p>Наше сообщество объединяет ценителей литературы, лингвистики и культурного анализа. Мы читаем как русскую и зарубежную классику, так и современную прозу, уделяя особое внимание авторскому стилю, историческому контексту и скрытым смыслам текстов.</p>
+        <p>📅 <strong>Формат встреч:</strong> онлайн-дискуссии в Zoom раз в 2 недели. Перед каждой встречей участники получают гайд с вопросами и тезисами.</p>
+        <p>💡 Мы создаём пространство, где важен каждый взгляд на книгу. Не бойтесь делиться даже «непопулярными» мнениями, предлагать редкие произведения или задавать вопросы о языке и структуре текста.</p>
+        <p>Присоединяйтесь к обсуждениям, голосуйте за следующие книги и становитесь частью нашего литературного сообщества!</p>
+        <h3>📜 Правила клуба</h3>
+        <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
           <li>Уважайте мнения других, даже если не согласны.</li>
-          <li>Режим "тихого участника" разрешён, но активность приветствуется.</li>
+          <li>Режим «тихого участника» разрешён, но активность приветствуется.</li>
           <li>Опоздания на встречи более чем на 15 мин требуют предупреждения.</li>
         </ul>
-        <h2>Организаторы</h2>
+        <h3>👥 Организаторы</h3>
         <p>Анна К. (модератор), Саргис П. (технический координатор)</p>
       </div>
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2026 LitHub. Платформа для книжных клубов. Только фронтенд-демо.</p>
+    <p>© 2026 LitHub. Платформа для книжных клубов. Только фронтенд-демо.</p>
   </footer>
+
   <script src="/js/script.js"></script>
 </body>
 </html>
